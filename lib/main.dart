@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:app_times/appbar.dart';
 import 'package:app_times/drawer.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:app_times/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,30 +29,11 @@ class TabelaAppState extends State<TabelaApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
-        drawer: const DrawerWidget(),
-        appBar: AppBar(
-          title: const Text("Título"),
-          centerTitle: true,
-          titleTextStyle: const TextStyle(
-            fontSize: 20,
-          ),
-        ),
-        body: Center(
-          child: Container(
-            margin: const EdgeInsets.all(10),
-            child: Column(
-              children: <Widget>[
-                const Text("Teste"),
-                ElevatedButton(
-                  onPressed: onClick,
-                  child: Text('número = $num'),
-                ),
-              ],
-            ),
-          ),
-        ),
+        drawer: DrawerWidget(),
+        appBar: AppBarWidget("App Drawer"),
+        body: HomeWidget(),
       ),
     );
   }
